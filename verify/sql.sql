@@ -1,0 +1,22 @@
+CREATE DATABASE verify_db;
+
+USE verify_db;
+
+GRANT ALL PRIVILEGES ON verify_db.* TO 'terdeu'@'localhost';
+CREATE TABLE users (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    email_verified VARCHAR(255) NULL,
+    password VARCHAR(255) NOT NULL,
+    date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE verify (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    code INT (255) NULL,
+    expires INT (255) NULL,
+    email VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
