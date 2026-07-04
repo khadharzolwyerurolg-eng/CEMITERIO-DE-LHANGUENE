@@ -1,6 +1,19 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
 
-// Initialize the Google Client
-$client = new Google\Client();
-echo "Google API Client loaded successfully!\n";
+session_start();
+
+if(!isset($_SESSION['user']))
+    {
+        header("Location: login.php");
+        exit;
+    }
+
+    $user = $_SESSION['user'];
+
+?>
+
+<h1>Welcome <?=$user['name']?></h1>
+<p>Email: <?=$email['email']?></p>
+<br>
+<br>
+<a href="logout.php">Logout</a>

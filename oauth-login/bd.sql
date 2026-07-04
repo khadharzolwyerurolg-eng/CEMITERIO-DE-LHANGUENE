@@ -1,4 +1,4 @@
-CREATE oauth_demo;
+CREATE DATABASE oauth_demo;
 USE oauth_demo;
 
 CREATE TABLE users(
@@ -10,3 +10,7 @@ CREATE TABLE users(
     picture VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
+
+GRANT ALL PRIVILEGES ON oauth_demo.* TO 'terdeu'@'localhost';
