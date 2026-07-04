@@ -1,0 +1,16 @@
+composer require google/apiclient:^2.15.0
+
+
+2.Include Autoloader: Add the Composer autoloader at the top of your PHP file to start using the Google classes:
+require_once __DIR__ . '/vendor/autoload.php';
+
+
+Quick Verification Example:
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+// Initialize the Google Client
+$client = new Google\Client();
+echo "Google API Client loaded successfully!\n";
+
+
