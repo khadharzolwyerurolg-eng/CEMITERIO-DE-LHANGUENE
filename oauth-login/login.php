@@ -9,7 +9,7 @@
 <body>
     <h2>OAUTH Login</h2>
     <h4>Click below to login with Google</h4>
-    <a href="google-calback.php">
+    <a href="google-callback.php">
         <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png">
     </a>
 </body>

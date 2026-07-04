@@ -20,9 +20,23 @@ if(!isset($_GET['code'])){
     header('Location: '. filter_var($auth_url, FILTER_SANITIZE_URL));
     exit;
 }else{
-    $client->authenticate($_GET['code']);
-    $token = $client->getAccessToken();
-    $client->setAccessToken();
+    $token = $client->authenticate($_GET['code']);
+
+    if (!is_array($token) || empty($token['access_token'])) {
+        $message = 'Google authentication failed.';
+        if (is_array($token) && !empty($token['error'])) {
+            $message .= ' Error: ' . $token['error'];
+            if (!empty($token['error_description'])) {
+                $message .= ' - ' . $token['error_description'];
+            }
+        } else {
+            $message .= ' No access token was returned.';
+        }
+
+        throw new Exception($message);
+    }
+
+    $client->setAccessToken($token);
 
     $oauth = new Google_Service_Oauth2($client);
     $userInfo = $oauth->userinfo->get();
@@ -30,14 +44,14 @@ if(!isset($_GET['code'])){
 
     // Store in DB::
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE oauth_uid = ? oauth_provider = 'google'");
+    $stmt = $conn->prepare("SELECT * FROM users WHERE oauth_uid = ? AND oauth_provider = 'google'");
     $stmt->bind_param("s", $userInfo->id);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if($result->num_rows == 0){
-        $stmt = $conn->prepare("INSERT INTO users (oauth_provider, oauth_uid, name, email, picture) VALUES ('google', ?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $userInfo->id, $userInfo->name, $userInfo->email, $userInfo->picture);
+        $stmt = $conn->prepare("INSERT INTO users (oauth_provider, oauth_uid, name, email) VALUES ('google', ?, ?, ?)");
+        $stmt->bind_param("sss", $userInfo->id, $userInfo->name, $userInfo->email);
         $stmt->execute();
     }
 
@@ -46,7 +60,7 @@ if(!isset($_GET['code'])){
         'email' => $userInfo->email
     ];
 
-    header("Location: dashboard.php");
+    header("Location: index.php");
     exit;
 
 }
