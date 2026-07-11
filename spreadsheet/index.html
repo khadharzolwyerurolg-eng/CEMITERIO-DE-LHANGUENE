@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Spreadsheet</title>
+</head>
+<body>
+
+<!-- Add new Modal -->
+<div class="modal fade" id="add-new-model" tabindex="-1" aria-labelledby="add-new-model Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="add-new-model Label">Add new Customers</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label class="mt-2 d-block" style="cursor: pointer;">
+          <img src="images/users.jpeg"  class="js-add-image mx-auto d-block" style="width: 150px; height: 150px; object-fit: cover;">
+          <input onchange="display_image(this.files[0])" type="file" name="image" class="d-none">
+          <script>
+            function display_image(file)
+            {
+                document.querySelector('.js-add-image').src = URL.createObjectURL(file);
+            }
+          </script>
+        </label>
+
+        <div class="mt-2">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name">
+        </div>
+
+        <div class="mt-2">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" min="1"  max="100" class="form-control" id="age" placeholder="Age" required>
+        </div>
+
+        <div class="mt-2">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" placeholder="Email Address" required>
+        </div>
+
+        <div class="mt-2">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" id="city" placeholder="City" required>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button onclick="add_new()" type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End new Modal -->
+
+<div class="table-responsive col-md-10 mx-auto">
+  <h2 class="my-2 text-center">Spreadsheet</h2>
+  <h4 class="my-3">Customers</h4>
+  <table class="table table-striped table-hover">
+      <tr>
+        <th>#ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Image</th>
+        <th>City</th>
+        <th rowspan="2">Action <button data-bs-toggle="modal" data-bs-target="#add-new-model" class="btn btn-primary btn-sm">New</button></th>
+      </tr>
+      <tbody class="js-table-body">
+           
+      </tbody>
+  </table>
+</div>
+ 
+</body>
+</html>
+<script>
+
+  send_data({}, "read");
+
+  function send_data(obj, type)
+  {
+      var form = new FormData();
+      for(key in obj)
+      {
+        form.append(key, obj[key]);
+      }
+ 
+      form.append('data_type', type)
+
+      var ajax = new XMLHttpRequest();
+
+      ajax.addEventListener('readystatechange', function(){
+
+          if(ajax.readyState == 4)
+          {
+            if(ajax.status == 200)
+            {
+              handle_result(ajax.responseText); 
+            }else{
+              alert("an error occured");
+            }
+          }
+      })
+
+      ajax.open('post', 'api.php', true);
+      ajax.send(form);
+  }
+
+  function handle_result(result)
+  {
+    console.log(result);
+    var obj = JSON.parse(result);
+    if(typeof obj == 'object')
+    {
+      if(obj.data_type == 'read')
+      {
+        let tbody = document.querySelector(".js-table-body");
+        let str = "";
+
+        if(Array.isArray(obj.data))
+        {
+            for(var i = 0; i < obj.data.length; i++){
+              let row = obj.data[i];
+              console.log(row);
+              str += `<tr><td>${row.id}</td><td>${row.name}</td><td>${row.email}</td><td>${row.age}</td><td>${row.image}</td><td>${row.city}</td><td><button class="btn btn-primary btn-sm">Edit</button><button class="btn btn-danger btn-sm">Delete</button></td></tr>`;
+            }
+        }else{
+          str = "<tr><td>No records found!</td></tr>"
+        } 
+          tbody.innerHTML = str;
+      }
+    }
+  }
+
+  function add_new()
+  {
+    const myModel = document.querySelector('#add-new-model');
+    myModel.hide();
+  }
+</script>
+<script src="js/bootstrap.bundle.min.js"></script>
