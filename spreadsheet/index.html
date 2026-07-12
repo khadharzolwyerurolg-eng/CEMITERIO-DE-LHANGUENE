@@ -16,42 +16,44 @@
         <h1 class="modal-title fs-5" id="add-new-model Label">Add new Customers</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form class="js-add-user-form" onsubmit="add_new(event)">
       <div class="modal-body">
-        <label class="mt-2 d-block" style="cursor: pointer;">
-          <img src="images/users.jpeg"  class="js-add-image mx-auto d-block" style="width: 150px; height: 150px; object-fit: cover;">
-          <input onchange="display_image(this.files[0])" type="file" name="image" class="d-none">
-          <script>
-            function display_image(file)
-            {
-                document.querySelector('.js-add-image').src = URL.createObjectURL(file);
-            }
-          </script>
-        </label>
+            <label  class="mt-2 d-block" style="cursor: pointer; text-align: center;">
+              <img src="images/users.jpeg"  class="js-add-image mx-auto d-block" style="width: 150px; height: 150px; object-fit: cover;">
+              <input id="image" onchange="display_image(this.files[0])" type="file" name="image" class="" required>
+              <script>
+                function display_image(file)
+                {
+                    document.querySelector('.js-add-image').src = URL.createObjectURL(file);
+                }
+              </script>
+            </label>
 
-        <div class="mt-2">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Name">
-        </div>
+            <div class="mt-2">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Name" required>
+            </div>
 
-        <div class="mt-2">
-            <label for="age" class="form-label">Age</label>
-            <input type="number" min="1"  max="100" class="form-control" id="age" placeholder="Age" required>
-        </div>
+            <div class="mt-2">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" min="1"  max="100" class="form-control" id="age" placeholder="Age" required>
+            </div>
 
-        <div class="mt-2">
-            <label for="email" class="form-label">Email Address</label>
-            <input type="email" class="form-control" id="email" placeholder="Email Address" required>
-        </div>
+            <div class="mt-2">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Email Address" required>
+            </div>
 
-        <div class="mt-2">
-            <label for="city" class="form-label">City</label>
-            <input type="text" class="form-control" id="city" placeholder="City" required>
-        </div>
+            <div class="mt-2">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" placeholder="City" required>
+            </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button onclick="add_new()" type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
@@ -68,7 +70,7 @@
         <th>Age</th>
         <th>Image</th>
         <th>City</th>
-        <th rowspan="2">Action <button data-bs-toggle="modal" data-bs-target="#add-new-model" class="btn btn-primary btn-sm">New</button></th>
+        <th rowspan="2">Action <button onclick="addMoadl.show()" data-bs-toggle="modal" data-bs-target="#add-new-model" class="btn btn-primary btn-sm">New</button></th>
       </tr>
       <tbody class="js-table-body">
            
@@ -78,18 +80,27 @@
  
 </body>
 </html>
+<script src="js/bootstrap.bundle.min.js"></script>
 <script>
+
+  const addModalElement = document.getElementById("add-new-model");
+  const addMoadl = bootstrap.Modal.getOrCreateInstance(addModalElement);
 
   send_data({}, "read");
 
   function send_data(obj, type)
   {
-      var form = new FormData();
-      for(key in obj)
-      {
-        form.append(key, obj[key]);
+      var form;
+      if (obj instanceof FormData) {
+        form = obj;
+      } else {
+        form = new FormData();
+        for(key in obj)
+        {
+          form.append(key, obj[key]);
+        }
       }
- 
+
       form.append('data_type', type)
 
       var ajax = new XMLHttpRequest();
@@ -133,13 +144,39 @@
           str = "<tr><td>No records found!</td></tr>"
         } 
           tbody.innerHTML = str;
+      } else if(obj.data_type == 'save') {
+        // If save succeeded, refresh the list and notify user
+        if(obj.data === true || (Array.isArray(obj.data) === false && obj.data)){
+          send_data({}, 'read');
+          //alert('Saved successfully');
+        } else {
+          alert('Save failed');
+        }
       }
     }
   }
 
-  function add_new()
+  function add_new(e)
   {
-    
+    e.preventDefault();
+    let form = new FormData();
+    let inputs = e.currentTarget.querySelectorAll("input, select, textarea");
+
+    for (let i = 0; i < inputs.length; i++) {
+      let el = inputs[i];
+      let key = el.name || el.id;
+      if(!key) continue;
+      if (el.type === 'file') {
+        if (el.files && el.files.length > 0) {
+          form.append(key, el.files[0]);
+        }
+      } else {
+        form.append(key, el.value);
+        el.value = "";
+      }
+    }
+
+    send_data(form, 'save');
+    addMoadl.hide();
   }
 </script>
-<script src="js/bootstrap.bundle.min.js"></script>
