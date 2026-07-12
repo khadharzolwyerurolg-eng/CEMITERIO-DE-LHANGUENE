@@ -17,10 +17,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form class="js-add-user-form" onsubmit="add_new(event)">
+      <input type="hidden" id="user_id" name="id" value="">
       <div class="modal-body">
             <label  class="mt-2 d-block" style="cursor: pointer; text-align: center;">
               <img src="images/users.jpeg"  class="js-add-image mx-auto d-block" style="width: 150px; height: 150px; object-fit: cover;">
-              <input id="image" onchange="display_image(this.files[0])" type="file" name="image" class="" required>
+              <input id="image" onchange="display_image(this.files[0])" type="file" name="image" class="">
               <script>
                 function display_image(file)
                 {
@@ -85,6 +86,8 @@
 
   const addModalElement = document.getElementById("add-new-model");
   const addMoadl = bootstrap.Modal.getOrCreateInstance(addModalElement);
+  let currentData = [];
+  let editId = null;
 
   send_data({}, "read");
 
@@ -135,22 +138,26 @@
 
         if(Array.isArray(obj.data))
         {
+            currentData = obj.data;
             for(var i = 0; i < obj.data.length; i++){
               let row = obj.data[i];
               console.log(row);
-              str += `<tr><td>${row.id}</td><td>${row.name}</td><td>${row.email}</td><td>${row.age}</td><td><img src="${row.image}" style="width: 100px; height: 100px; object-fit: cover;"/></td><td>${row.city}</td><td><button class="btn btn-primary btn-sm">Edit</button><button  onclick="delete_row(${row.id})" class="btn btn-danger btn-sm">Delete</button></td></tr>`;
+              str += `<tr><td>${row.id}</td><td>${row.name}</td><td>${row.email}</td><td>${row.age}</td><td><img src="${row.image}" style="width: 50px; height: 50px; object-fit: cover;"/></td><td>${row.city}</td><td><button onclick="edit_row(${row.id})" class="btn btn-primary btn-sm">Edit</button><button onclick="delete_row(${row.id})" class="btn btn-danger btn-sm">Delete</button></td></tr>`;
             }
         }else{
           str = "<tr><td>No records found!</td></tr>"
         } 
           tbody.innerHTML = str;
-      } else if(obj.data_type == 'save') {
-        // If save succeeded, refresh the list and notify user
+      } else if(obj.data_type == 'save' || obj.data_type == 'update') {
+        // If save/update succeeded, refresh the list and notify user
         if(obj.data === true || (Array.isArray(obj.data) === false && obj.data)){
           send_data({}, 'read');
-          //alert('Saved successfully');
+          editId = null;
+          document.getElementById('user_id').value = '';
+          document.querySelector('.js-add-image').src = 'images/users.jpeg';
+          //alert(obj.data_type == 'save' ? 'Saved successfully' : 'Updated successfully');
         } else {
-          alert('Save failed');
+          alert(obj.data_type == 'save' ? 'Save failed' : 'Update failed');
         }
       } else if(obj.data_type == 'delete') {
         // If delete succeeded, refresh the list and notify user
@@ -170,6 +177,7 @@
     let form = new FormData();
     let inputs = e.currentTarget.querySelectorAll("input, select, textarea");
 
+    let imagePicked = false;
     for (let i = 0; i < inputs.length; i++) {
       let el = inputs[i];
       let key = el.name || el.id;
@@ -177,14 +185,25 @@
       if (el.type === 'file') {
         if (el.files && el.files.length > 0) {
           form.append(key, el.files[0]);
+          imagePicked = true;
         }
       } else {
         form.append(key, el.value);
-        el.value = "";
       }
     }
 
-    send_data(form, 'save');
+    if (!editId && !imagePicked) {
+      alert('Please select an image.');
+      return;
+    }
+
+    if (editId) {
+      form.append('id', editId);
+      send_data(form, 'update');
+    } else {
+      send_data(form, 'save');
+    }
+
     addMoadl.hide();
   }
 
@@ -196,5 +215,20 @@
     }
 
     send_data({id:id}, 'delete');
+  }
+
+  function edit_row(id)
+  {
+    editId = id;
+    let row = currentData.find(function(item){ return parseInt(item.id) === parseInt(id); });
+    if (!row) return;
+
+    document.getElementById('user_id').value = row.id;
+    document.getElementById('name').value = row.name;
+    document.getElementById('age').value = row.age;
+    document.getElementById('email').value = row.email;
+    document.getElementById('city').value = row.city;
+    document.querySelector('.js-add-image').src = row.image || 'images/users.jpeg';
+    addMoadl.show();
   }
 </script>
