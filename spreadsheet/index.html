@@ -89,6 +89,19 @@
   let currentData = [];
   let editId = null;
 
+  function clear_form() {
+    editId = null;
+    document.getElementById('user_id').value = '';
+    document.getElementById('name').value = '';
+    document.getElementById('age').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('city').value = '';
+    document.getElementById('image').value = '';
+    document.querySelector('.js-add-image').src = 'images/users.jpeg';
+  }
+
+  addModalElement.addEventListener('hidden.bs.modal', clear_form);
+
   send_data({}, "read");
 
   function send_data(obj, type)
@@ -205,6 +218,7 @@
     }
 
     addMoadl.hide();
+    clear_form();
   }
 
   function delete_row(id)
