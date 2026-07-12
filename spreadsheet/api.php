@@ -31,6 +31,24 @@ if(count($_POST) > 0)
         $query = "SELECT * FROM users ORDER BY id DESC";
         $result = query($query);
         $info['data'] = $result ?? [];
+    }else
+    if($info['data_type'] == 'delete')
+    {
+        $id = intval($_POST['id']);
+
+        // Remove associated image file if exists
+        $row = query("SELECT image FROM users WHERE id = $id LIMIT 1");
+        if (is_array($row) && count($row) > 0) {
+            $imagePath = $row[0]['image'] ?? '';
+            if ($imagePath && file_exists($imagePath)) {
+                @unlink($imagePath);
+            }
+        }
+
+        $query = "DELETE FROM users WHERE id = $id LIMIT 1";
+
+        $result = query($query);
+        $info['data'] = $result ?? [];
     }elseif($info['data_type'] == 'save')
     {
         // Check for an image::
