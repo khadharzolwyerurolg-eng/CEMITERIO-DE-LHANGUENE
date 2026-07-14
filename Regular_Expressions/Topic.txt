@@ -1,0 +1,8 @@
+00 O que são e por que usar expressões regulares?
+Uma expressão regular (ou regex) é uma sequência de caracteres que define um padrão de busca. 
+Ela funciona como um "filtro superpoderoso" usado para procurar, validar, extrair ou substituir partes específicas de um texto dentro de um mar de informações.
+
+Você deve usar expressões regulares (ou regex) principalmente para:Validação de dados: 
+    1. Verificar se um texto digitado em um formulário segue um formato exato, como e-mails, números de telefone, códigos postais ou senhas.
+    2. Extração de informações: Encontrar rapidamente e puxar dados de grandes blocos de texto (ex: puxar todos os links de uma página HTML ou todos os números de IP de um arquivo de log).
+    3. Busca e substituição avançada: Localizar palavras que possuem grafias semelhantes e substituí-las de uma vez só.
