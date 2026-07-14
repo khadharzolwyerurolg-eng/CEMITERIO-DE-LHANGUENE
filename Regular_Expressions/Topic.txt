@@ -57,7 +57,10 @@ Principais Metacharacters:
         
     4. Conjuntos e Lógica:
         [abc]: Corresponde a qualquer um dos caracteres dentro dos colchetes (A, B ou C).
-        [^abc]: Corresponde a qualquer caractere exceto os que estão dentro dos colchetes.
+        [a-z]: Corresponde a qualquer um dos caracteres minúsculas dentro dos colchetes (a-z).
+        [A-Z]: Corresponde a qualquer um dos caracteres maiúsculas dentro dos colchetes (A-Z).
+        [0-9]: Corresponde a qualquer um dos dígito dentro dos colchetes (0-9).
+        [^abc ]: Corresponde a qualquer caractere exceto os que estão dentro dos colchetes.
         | (Pipe): Funciona como o operador lógico OU (ex: gato|cão).
         ( ): Agrupa caracteres e cria um grupo de captura de dados.
         
