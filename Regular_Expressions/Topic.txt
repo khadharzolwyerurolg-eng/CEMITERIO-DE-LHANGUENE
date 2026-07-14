@@ -6,3 +6,26 @@ Você deve usar expressões regulares (ou regex) principalmente para:Validação
     1. Verificar se um texto digitado em um formulário segue um formato exato, como e-mails, números de telefone, códigos postais ou senhas.
     2. Extração de informações: Encontrar rapidamente e puxar dados de grandes blocos de texto (ex: puxar todos os links de uma página HTML ou todos os números de IP de um arquivo de log).
     3. Busca e substituição avançada: Localizar palavras que possuem grafias semelhantes e substituí-las de uma vez só.
+
+01 Literal Search (Busca Literal):
+Literal search é a busca por um termo exato, caractere por caractere, sem interpretar símbolos como comandos especiais.
+É o equivalente ao famoso Ctrl + F do seu teclado.
+    1. Como funciona: Se você buscar por cat., o sistema procurará exatamente pelas letras c-a-t seguidas de um ponto final.
+    2. Diferença do Regex: Em Regex puro, o ponto . significa "qualquer caractere". Na busca literal, o ponto é apenas um ponto.
+
+Modes (Modos ou Flags):
+Modes (também chamados de flags) são modificadores que alteram o comportamento global de como a sua expressão regular faz a busca. 
+Eles são colocados ao final da expressão (ex: /padrao/gi).
+
+Os três modos mais importantes e utilizados são:
+    1. Case-insensitive Mode (i):
+    Ignora a diferença entre letras maiúsculas e minúsculas.
+    Exemplo: A busca /texto/i vai encontrar "texto", "Texto" e "TEXTO".2. 
+    
+    2. Global Mode (g):
+    Encontra todas as ocorrências do padrão no texto, em vez de parar na primeira que encontrar.
+    Exemplo: Sem a flag g, a busca para no primeiro resultado. Com ela, varre o documento inteiro.
+    
+    3. Multiline Mode (m):
+    Altera o comportamento dos âncoras de início (^) e fim ($) de linha.
+    Exemplo: Faz com que a busca reconheça o início e o fim de cada linha individual de um texto longo, e não apenas o começo e o fim do texto inteiro.
