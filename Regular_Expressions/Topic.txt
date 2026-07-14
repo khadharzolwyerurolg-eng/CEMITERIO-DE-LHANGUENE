@@ -29,3 +29,38 @@ Os três modos mais importantes e utilizados são:
     3. Multiline Mode (m):
     Altera o comportamento dos âncoras de início (^) e fim ($) de linha.
     Exemplo: Faz com que a busca reconheça o início e o fim de cada linha individual de um texto longo, e não apenas o começo e o fim do texto inteiro.
+
+02 Metacharacters (ou metacaracteres):
+Metacharacters (ou metacaracteres) são os blocos de construção das expressões regulares. 
+Eles são caracteres especiais que não são interpretados literalmente; em vez disso, eles representam comandos, regras de posição ou conjuntos de caracteres para o motor do Regex.
+
+Principais Metacharacters:
+    1. Correspondência de Caracteres:
+        . (Ponto): Corresponde a qualquer caractere único, exceto uma nova linha.
+        \d: Corresponde a qualquer dígito numérico de 0 a 9.
+        \D: Corresponde a qualquer caractere que não é numérico (Letras).
+        \w: Corresponde a qualquer caractere alfanumérico (letras, números e underline _).
+        \W: Corresponde a qualquer caractere não alfanumérico (Caractere especiais Símbolos).
+        \s: Corresponde a qualquer espaço em branco (espaços, tabulações, quebras de linha).
+        \S: Corresponde a qualquer coisa que não esta tem espaços.
+
+    2. Âncoras (Posição):
+        ^: Marca o início de uma linha ou texto.
+        $: Marca o fim de uma linha ou texto.
+        \b: Marca uma fronteira de palavra (o limite onde uma palavra começa ou termina).
+        
+    3. Quantificadores (Frequência):
+        *: O caractere anterior pode aparecer zero ou mais vezes.
+        +: O caractere anterior deve aparecer uma ou mais vezes.
+        ?: O caractere anterior é opcional (aparece zero ou uma vez).
+        {n}: O caractere anterior deve aparecer exatamente n vezes.
+        
+    4. Conjuntos e Lógica:
+        [abc]: Corresponde a qualquer um dos caracteres dentro dos colchetes (A, B ou C).
+        [^abc]: Corresponde a qualquer caractere exceto os que estão dentro dos colchetes.
+        | (Pipe): Funciona como o operador lógico OU (ex: gato|cão).
+        ( ): Agrupa caracteres e cria um grupo de captura de dados.
+        
+O Caractere de Escape (\)Se você precisar buscar por um metacharacter de forma literal (como encontrar um ponto final real ou um ponto de interrogação), você deve usar a barra invertida \ antes dele para "anular" o seu poder especial.
+    \? busca o caractere ? literal.
+    \. busca o caractere . literal.
