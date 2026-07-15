@@ -84,3 +84,13 @@ Combinando o Ponto com Quantificadores:
         O sinal de mais significa "um ou mais vezes".
         Exemplo: g.+o exige que exista pelo menos uma letra ou símbolo entre o 'g' e o 'o'. Encontra "gato", mas não encontra "go".
         
+04 Quantificadores Gananciosos (Greedy)
+O comportamento greedy significa que o Regex vai engolir o máximo de texto possível que corresponda ao padrão antes de parar. 
+Ele vai até o último caractere válido da linha.
+    
+    Símbolos: *, +, ?
+Exemplo: Imagine que você tem o texto "O <b>gato</b> pegou o <b>rato</b>" e usa o padrão:<b>.*</b>
+
+Resultado Greedy: O Regex captura tudo desde o primeiro <b> até o último </b>.
+Captura: <b>gato</b> pegou o <b>rato</b> (Ele engoliu a frase inteira).
+
