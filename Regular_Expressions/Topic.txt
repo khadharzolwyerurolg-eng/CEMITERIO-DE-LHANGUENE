@@ -67,3 +67,20 @@ Principais Metacharacters:
 O Caractere de Escape (\)Se você precisar buscar por um metacharacter de forma literal (como encontrar um ponto final real ou um ponto de interrogação), você deve usar a barra invertida \ antes dele para "anular" o seu poder especial.
     \? busca o caractere ? literal.
     \. busca o caractere . literal.
+
+03 Wildcard (caractere curinga):
+O ponto . corresponde a qualquer caractere único, não importa qual seja.
+    Ele aceita letras (maiúsculas ou minúsculas).
+    Ele aceita números.
+    Ele aceita símbolos e espaços em branco.
+    Exceção: Por padrão, ele não corresponde a quebras de linha (\n), a menos que uma flag especial (como a flag s ou Singleline) esteja ativada.
+
+Combinando o Ponto com Quantificadores:
+        1. O padrão .* (Curinga para tudo):
+        O asterisco significa "zero ou mais vezes". Portanto, .* significa: encontre qualquer quantidade de qualquer caractere.
+        Exemplo: O padrão falar.*fazer encontra "falar é fácil, difícil é fazer" e também "falar e fazer".
+        
+        2. O padrão .+ (Pelo menos um caractere):
+        O sinal de mais significa "um ou mais vezes".
+        Exemplo: g.+o exige que exista pelo menos uma letra ou símbolo entre o 'g' e o 'o'. Encontra "gato", mas não encontra "go".
+        
