@@ -94,3 +94,12 @@ Exemplo: Imagine que você tem o texto "O <b>gato</b> pegou o <b>rato</b>" e usa
 Resultado Greedy: O Regex captura tudo desde o primeiro <b> até o último </b>.
 Captura: <b>gato</b> pegou o <b>rato</b> (Ele engoliu a frase inteira).
 
+Quantificadores Preguiçosos (Lazy / Non-greedy)
+O comportamento lazy faz o oposto. 
+Ele diz ao Regex para parar na primeira oportunidade possível, capturando o menor bloco de texto que satisfaça a regra.
+Como ativar: 
+    Adicione uma interrogação ? logo após o quantificador (*?, +?).
+    Exemplo: Usando o mesmo texto "O <b>gato</b> pegou o <b>rato</b>", mudamos o padrão para:<b>.*?</b>
+    Resultado Lazy: O Regex para assim que encontra o primeiro fechamento de tag.
+    Captura 1: <b>gato</b>
+    Captura 2: <b>rato</b>
