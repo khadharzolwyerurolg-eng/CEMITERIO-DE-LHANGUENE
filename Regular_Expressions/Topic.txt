@@ -103,3 +103,17 @@ Como ativar:
     Resultado Lazy: O Regex para assim que encontra o primeiro fechamento de tag.
     Captura 1: <b>gato</b>
     Captura 2: <b>rato</b>
+
+Estudar expressões regulares (Regex) é um dos maiores divisores de águas na carreira de qualquer pessoa que trabalha com tecnologia, programação ou análise de dados.
+A importância desse conteúdo resume-se em três pilares:
+## 1. Produtividade e Economia de Tempo
+O que você levaria horas para fazer manualmente (ou dezenas de linhas de código com loops e condições), o Regex resolve em uma única linha. É a ferramenta definitiva para automação de tarefas repetitivas de texto.
+## 2. Habilidade Universal
+O Regex não pertence a uma linguagem específica. O mesmo conceito que você aprende hoje serve para Python, JavaScript, Java, PHP, bancos de dados (SQL), editores de código (VS Code) e até no terminal do Linux. Você aprende uma vez e usa para sempre, em qualquer ecossistema.
+## 3. Resolução de Problemas Críticos
+Existem tarefas que são virtualmente impossíveis de resolver de forma eficiente sem Regex.
+
+* Segurança: Garantir que uma senha tenha letras, números e caracteres especiais (Validação).
+* Auditoria: Vasculhar gigabytes de arquivos de texto de servidores à procura de um erro específico (Análise de Logs).
+* Migração: Transformar milhares de datas no formato DD/MM/AAAA para AAAA-MM-DD instantaneamente.
+
