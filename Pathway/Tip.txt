@@ -1,0 +1,4 @@
+Error System Fan Has Failed. Service PC to prevent damage to the system. Press <F2> to continue
+https://youtu.be/t0iKB8bN418?si=fgdfzRvK9QUF2tyF
+
+Desligue o computador e verifique fisicamente se a ventoinha (cooler) está a girar. Retire o pó acumulado, certifique-se de que o cabo da ventoinha está bem ligado à placa-mãe (no pino "SYS_FAN" ou "CPU_FAN"). Se a ventoinha estiver avariada, terá de ser substituída para evitar sobreaquecimento.
