@@ -8,3 +8,6 @@ Se a ventoinha estiver a girar normalmente e o erro continuar a aparecer, a mens
 https://drive.google.com/file/d/1IjLqFDsVZ7UtI2scbJH334YQUGwvaqgu/view
 
 Softwares de acesso remoto permitem controlar um computador ou dispositivo móvel à distância, ideal para suporte técnico, trabalho remoto ou acesso a arquivos. As soluções mais populares são fáceis de instalar e geralmente gratuitas para uso pessoal, destacando-se o AnyDesk, a Área de trabalho remota do Google Chrome e o TeamViewer.
+
+ Como enviar formulários em Ajax e jQuery 
+https://youtu.be/wVl_iK4Dmo4?si=A3tAWroIlW3i4FW1
