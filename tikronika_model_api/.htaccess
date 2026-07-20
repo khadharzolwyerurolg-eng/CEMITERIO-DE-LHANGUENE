@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    # Desativa a listagem de diretórios
+    Options -Indexes
+    RewriteEngine On
+    RewriteBase /tikronika_model_api/
+
+    # Envia tudo o resto para o Front Controller
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+</IfModule>
