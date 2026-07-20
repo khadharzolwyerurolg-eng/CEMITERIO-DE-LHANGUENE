@@ -11,3 +11,21 @@ Softwares de acesso remoto permitem controlar um computador ou dispositivo móve
 
  Como enviar formulários em Ajax e jQuery 
 https://youtu.be/wVl_iK4Dmo4?si=A3tAWroIlW3i4FW1
+
+
+A forma mais rápida de iniciar um servidor local é usar o servidor embutido do PHP. 
+Abra o terminal (ou Prompt de Comando), navegue até a pasta dos seus arquivos usando cd, e execute:
+    php -S localhost:8000. 
+Em seguida, acesse http://localhost:8000 no seu navegador.
+Usando o Servidor Embutido (Ideal para testes rápidos).
+
+Para iniciar rapidamente um servidor web sem precisar instalar programas pesados como o Apache ou o Nginx, o próprio PHP possui um servidor nativo.
+Abra o terminal (Terminal no Mac/Linux ou Prompt de Comando/PowerShell no Windows).
+Navegue até o diretório onde estão seus arquivos PHP, utilizando o comando cd seguido do caminho da pasta:
+bash:
+    cd caminho/para/sua/pasta
+Use o código com cuidado.Inicie o servidor com o comando abaixo:
+bash:
+    php -S localhost:8000
+Use o código com cuidado.Nota: O número 8000 é a porta onde o servidor vai rodar, mas você pode alterá-lo se necessário.
+Visualize no navegador: Abra o seu browser de preferência e acesse o endereço:http://localhost:8000
