@@ -26,9 +26,9 @@ try {
     });
 
     try {
-        require_once 'Functions.php';
-        require_once 'Controller.php';
-        require_once 'App.php';
+        require_once __DIR__ . '/Functions.php';
+        require_once __DIR__ . '/Controller.php';
+        require_once __DIR__ . '/App.php';
     } catch (Exception $e) {
         throw new Exception('Erro ao configurar ficheiro INIT: ' . $e->getMessage());
     }
