@@ -140,3 +140,13 @@ Você pretende rodar esse gerador diretamente no navegador (Node.js/Frontend) ou
 [3] [https://www.youtube.com](https://www.youtube.com/watch?v=5cP8tfvxVMQ)
 [4] [https://whisperweb.dev](https://whisperweb.dev/pt-BR/generate-captions)
 [5] [https://elevenlabs.io](https://elevenlabs.io/pt/subtitle-generator)
+
+
+Por que aprender PHP na era da IA?
+O PHP continua sendo o motor de mais de 75% da web tradicional (graças ao WordPress e Laravel), mas ele corre atrás no quesito IA.
+
+Integração via APIs: O PHP é excelente para o desenvolvimento web tradicional e consome APIs de IA (como a da OpenAI) perfeitamente usando clientes HTTP ou pacotes criados pela comunidade (como o openai-php/client).
+
+Automação e Ecossistema Laravel: O ecossistema Laravel introduziu ferramentas como o Laravel Pulse e pacotes comunitários focados em IA, tornando fácil adicionar inteligência a sistemas de gestão (CRMs, ERPs) e e-commerces já existentes.
+
+Limitação: O PHP é executado estritamente no servidor e não possui suporte nativo maduro para processamento pesado de redes neurais locais ou manipulação de IA diretamente no cliente.
