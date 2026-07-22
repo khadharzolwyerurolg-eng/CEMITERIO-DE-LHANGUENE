@@ -150,3 +150,14 @@ Integração via APIs: O PHP é excelente para o desenvolvimento web tradicional
 Automação e Ecossistema Laravel: O ecossistema Laravel introduziu ferramentas como o Laravel Pulse e pacotes comunitários focados em IA, tornando fácil adicionar inteligência a sistemas de gestão (CRMs, ERPs) e e-commerces já existentes.
 
 Limitação: O PHP é executado estritamente no servidor e não possui suporte nativo maduro para processamento pesado de redes neurais locais ou manipulação de IA diretamente no cliente.
+
+Por que aprender JavaScript na era da IA?
+O JavaScript deixou de ser apenas a linguagem do navegador e se tornou uma das ferramentas mais importantes para integrar modelos de inteligência artificial.
+
+IA no Navegador (Client-side): Bibliotecas como ONNX Runtime Web e Transformers.js permitem rodar modelos de IA (como o Whisper e o Llama) diretamente no navegador do usuário, sem gastar com servidores.
+
+Ecossistema Oficial: Todas as grandes empresas de IA (OpenAI, Anthropic, Google Gemini) lançam e mantêm SDKs oficiais em JavaScript/TypeScript desde o primeiro dia.
+
+Aplicações Fullstack: Com frameworks como Next.js e Nuxt.js, você constrói a interface visual da IA e o backend que se conecta aos modelos usando uma única linguagem.
+
+Ferramentas de Agentes (LangChain): O framework LangChain.js permite criar agentes de IA complexos e sistemas de memória diretamente em JS.
