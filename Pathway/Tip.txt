@@ -313,3 +313,36 @@ O que achou destas explicações?
 [13] [https://revistaoeste.com](https://revistaoeste.com/oestegeral/2025/09/29/a-forma-mais-rapida-e-segura-de-liberar-espaco-no-celular/)
 [14] [https://help.macgasm.net](https://help.macgasm.net/pt/guide/clear-system-data-iphone-ipad/)
 [15] [https://exame.com](https://exame.com/tecnologia/examelab/como-liberar-espaco-no-celular-android/)
+
+
+Usar o laptop conectado à tomada traz grandes vantagens para a vida útil do aparelho e para a sua produtividade. Ao contrário dos aparelhos antigos, os computadores modernos possuem baterias inteligentes de Íons de Lítio (Li-ion) que não sofrem do efeito de "vício". [1, 2, 3, 4] 
+## As Vantagens de Usar na Tomada
+
+* Desempenho Máximo: O processador e a placa de vídeo operam em capacidade total apenas quando recebem energia direta da tomada. [5] 
+* Preservação da Bateria: Quando a carga atinge 100%, o sistema corta o uso da bateria e o laptop passa a rodar usando apenas a energia da rede elétrica. [6, 7, 8] 
+* Redução de Ciclos: Menos uso da bateria significa menos ciclos de carga e descarga, o que retarda o desgaste natural do componente. [9, 10] 
+* Jogos e Tarefas Pesadas: Atividades como jogar, editar vídeos ou renderizar imagens exigem tanta energia que a bateria sozinha não consegue suprir sem superaquecer e descarregar rapidamente.
+
+## O Único Ponto de Atenção: O Calor
+O grande inimigo das baterias é o calor excessivo. Deixar o notebook na tomada enquanto realiza tarefas muito pesadas gera calor. Se o laptop esquentar muito e ficar constantemente em 100% de carga sob alta temperatura, a bateria pode se desgastar mais rápido. [11, 12] 
+Para resolver isso, a maioria das fabricantes atuais (como Lenovo, Dell, Asus, HP e Apple) possui softwares que limitam a carga máxima em 60% ou 80% quando o aparelho é usado direto na tomada, protegendo totalmente a saúde do componente. [13] 
+------------------------------
+Para que eu possa te dar uma dica mais precisa de conservação, me conta:
+
+* Qual é a marca ou modelo do seu laptop?
+* Você costuma usá-lo mais para tarefas básicas (estudo/trabalho) ou para jogos e programas pesados?
+
+
+[1] [https://www.techtudo.com.br](https://www.techtudo.com.br/guia/2025/12/voce-nunca-mais-vai-deixar-o-notebook-na-tomada-o-dia-todo-ao-ler-isso-edinfoeletro.ghtml)
+[2] [https://www.hp.com](https://www.hp.com/br-pt/shop/tech-takes/deixar-notebook-conectado-na-tomada)
+[3] [https://www.tcees.tc.br](https://www.tcees.tc.br/ajuda/posso-deixar-o-notebook-ligado-na-tomada/)
+[4] [https://www.ceavi.udesc.br](https://www.ceavi.udesc.br/arquivos/id_submenu/487/como_usar_e_preservar_a_bateria_do_notebook.pdf)
+[5] [https://www.tiktok.com](https://www.tiktok.com/@lipemalestar/video/7116177522655579398)
+[6] [https://www.hp.com](https://www.hp.com/br-pt/shop/tech-takes/deixar-notebook-conectado-na-tomada)
+[7] [https://www.tcees.tc.br](https://www.tcees.tc.br/ajuda/posso-deixar-o-notebook-ligado-na-tomada/)
+[8] [https://quenotebookcomprar.com.br](https://quenotebookcomprar.com.br/baterias-de-notebooks/)
+[9] [https://www.meupositivo.com.br](https://www.meupositivo.com.br/doseujeito/dicas/como-melhorar-a-vida-util-da-bateria-do-notebook/)
+[10] [https://www.instagram.com](https://www.instagram.com/reel/DXKxWjRBIw-/)
+[11] [https://www.hp.com](https://www.hp.com/br-pt/shop/tech-takes/deixar-notebook-conectado-na-tomada)
+[12] [https://www.instagram.com](https://www.instagram.com/reel/DFFdK0PR62g/)
+[13] [https://www.instagram.com](https://www.instagram.com/reel/DLM8pdMvD2N/)
