@@ -420,3 +420,28 @@ Se você fizer o teste do Passo 1, me avise: o notebook ligou direto ou a tela c
 [7] [https://www.hp.com](https://www.hp.com/us-en/shop/tech-takes/how-do-i-fix-laptop-that-wont-turn-on)
 [8] [https://www.hp.com](https://www.hp.com/id-en/shop/tech-takes/post/how-to-reset-bios-hp-laptop-safely)
 [9] [https://www.hp.com](https://www.hp.com/hk-en/shop/tech-takes/post/how-to-reset-bios-hp-laptop-safely)
+
+Esse erro indica que a sua máquina virtual no VirtualBox sofreu um travamento crítico (conhecido como Guru Meditation). O próprio programa interrompeu a execução para evitar corromper os dados armazenados no disco virtual.
+Como você está usando o Ubuntu, as causas mais comuns para esse tipo de pane e as formas de resolver são:
+## 1. Falta de memória RAM ou processador sobrecarregado
+Se você alocou muita memória RAM ou núcleos de CPU para a máquina virtual, o Ubuntu (sistema hospedeiro) pode ter ficado sem recursos e fechado o processo.
+
+* Como ajustar: Feche a janela do erro clicando em OK para desligar a máquina. Abra a tela principal do VirtualBox, clique em Configurações (Settings) > Sistema (System). Diminua a barra de memória RAM e garanta que ela permaneça na zona verde. Na aba Processador, reduza a quantidade de núcleos dedicados se tiver colocado o máximo.
+
+## 2. Incompatibilidade com os drivers de aceleração 3D
+Muitas falhas críticas no Ubuntu ocorrem devido ao controlador gráfico virtual.
+
+* Como ajustar: Nas Configurações da máquina virtual, vá em Tela (Display). Tente desmarcar a opção "Habilitar Aceleração 3D" (Enable 3D Acceleration) ou altere o Controlador Gráfico (geralmente alternar para VMSVGA resolve problemas no Linux).
+
+## 3. Falta de espaço no disco físico do seu computador
+Se o seu SSD ou HD do Ubuntu estiver completamente cheio, a máquina virtual não consegue expandir o arquivo de disco rígido virtual (.vdi) e trava imediatamente.
+
+* Como ajustar: Verifique o espaço livre no seu Ubuntu através do aplicativo "Analisador de Uso de Disco" ou rodando df -h no terminal. Se necessário, use os comandos de limpeza de cache que vimos anteriormente para liberar espaço.
+
+------------------------------
+Para que eu possa te ajudar a decifrar o motivo exato, você pode fazer o seguinte:
+
+   1. Abra o VirtualBox, clique com o botão direito na sua máquina Cobaia_7 e selecione Mostrar Log (Show Log).
+   2. Se puder, copie e cole aqui as últimas 20 linhas do arquivo ou me diga: qual sistema operacional você instalou dentro dessa máquina virtual?
+
+
