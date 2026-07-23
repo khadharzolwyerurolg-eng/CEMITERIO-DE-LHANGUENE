@@ -197,3 +197,33 @@ Para podermos ser mais exatos, poderia me dizer:
 [6] [https://pt.slideshare.net](https://pt.slideshare.net/slideshow/ubuntu-guia-do-iniciante-19668904/19668904)
 [7] [https://www.reddit.com](https://www.reddit.com/r/Ubuntu/comments/1km339w/how_to_uninstall_apps/?tl=pt-br)
 [8] [https://www.reddit.com](https://www.reddit.com/r/linux4noobs/comments/1hx5jmm/how_to_remove_an_application_from_ubuntu/?tl=pt-br)
+
+Para desinstalar o KDE Connect do Ubuntu, você pode fazer isso de forma rápida pelo terminal, pois o comando remove todos os componentes do sistema.
+## Método pelo Terminal (Recomendado)
+
+   1. Abra o terminal com as teclas Ctrl + Alt + T.
+   2. Execute o comando abaixo para remover o programa e todos os seus arquivos de configuração:
+   
+   sudo apt purge kdeconnect
+   
+   3. Digite sua senha (os caracteres não vão aparecer por segurança) e pressione Enter.
+   4. Em seguida, limpe as dependências que ficaram sobrando no sistema:
+   
+   sudo apt autoremove
+   
+   
+------------------------------
+## Método pela Interface Gráfica
+Se você instalou o KDE Connect pela loja de aplicativos, siga estes passos:
+
+   1. Abra a Central de Aplicativos (App Center / Ubuntu Software).
+   2. Clique na aba Gerenciar ou Instalados.
+   3. Busque por KDE Connect na barra de pesquisa.
+   4. Clique no ícone da Lixeira ou no botão Remover e confirme com a sua senha.
+
+Se você quiser reinstalar o aplicativo no futuro ou precisar de ajuda com outro programa, posso ajudar se me disser:
+
+* Você encontrou algum erro ou mensagem de falha durante a remoção?
+* O ícone do aplicativo sumiu por completo do seu menu do Ubuntu?
+
+
