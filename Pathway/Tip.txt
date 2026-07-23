@@ -386,3 +386,37 @@ Se você quiser descobrir o modelo exato para eu te indicar o passo a passo, me 
 [11] [https://learn.microsoft.com](https://learn.microsoft.com/pt-br/answers/questions/3168131/computador-s-liga-ao-tirar-e-recolocar-bateria)
 [12] [https://forum.adrenaline.com.br](https://forum.adrenaline.com.br/threads/pc-so-liga-quando-tiro-e-coloco-a-bateria.681808/)
 [13] [https://community.acer.com](https://community.acer.com/pt/discussion/673637/a315-34-c6zs-minhas-teclas-shift-nao-funcionam/plookupSort)
+
+
+Nos notebooks da HP, esse comportamento de travar no ligar e precisar tirar a bateria é um sintoma clássico. Na maioria das vezes, o sistema exibe mensagens como "CMOS Checksum Invalid" ou "Real-Time Clock Power Loss". [1, 2, 3] 
+Isso indica que o sistema de energia temporária da placa-mãe está falhando. Como o seu modelo possui bateria removível (externa), veja como resolver definitivamente. [1, 3, 4] 
+## Passo 1: O comando de reinicialização elétrica da HP
+A HP possui um comando oficial para limpar o cache de energia acumulado e resetar os sensores internos sem precisar abrir o aparelho: [4, 5] 
+
+   1. Desligue o notebook por completo.
+   2. Remova a bateria e desconecte o carregador da tomada.
+   3. Mantenha o botão de ligar pressionado por 15 segundos (isso drena toda a energia acumulada que causa o travamento).
+   4. Conecte apenas o carregador (deixe a bateria de fora) e tente ligar. [4, 5, 6] 
+
+## Passo 2: O teste da bateria principal
+Deixe o notebook funcionando sem a bateria, ligado direto na tomada pelo carregador por um ou dois dias. [4, 7] 
+
+* Se ele ligar normalmente todas as vezes sem dar erro, o problema está na sua bateria principal. Ela está velha, enviando picos de voltagem errados e travando o circuito de segurança da HP. A solução é trocá-la ou usar apenas na tomada. [3, 7, 8] 
+
+## Passo 3: O teste da hora (Bateria da BIOS)
+Se mesmo sem a bateria principal o erro continuar aparecendo, observe a data do relógio:
+
+* Toda vez que liga, o relógio do sistema está atrasado, zerado ou em um ano antigo (como 2015 ou 2020)?
+* Se sim, a bateria interna da BIOS (aquela de relógio) acabou totalmente. Leve a uma assistência técnica local para fazer a substituição. É um serviço rápido e barato. [1, 3, 9] 
+
+Se você fizer o teste do Passo 1, me avise: o notebook ligou direto ou a tela continuou preta antes de você recolocar a bateria?
+
+[1] [https://www.youtube.com](https://www.youtube.com/watch?v=aWENV3W3Y5Q&t=9)
+[2] [https://www.youtube.com](https://www.youtube.com/watch?v=tgrOxhr_3R8)
+[3] [https://www.youtube.com](https://www.youtube.com/watch?v=3grV2a15ehU&t=1)
+[4] [https://support.hp.com](https://support.hp.com/us-en/document/ish_3932413-2337994-16)
+[5] [https://support.hp.com](https://support.hp.com/fr-fr/document/ish_11469889-11469938-16?validated=true&fallbackLocale=us-en)
+[6] [https://h30434.www3.hp.com](https://h30434.www3.hp.com/t5/Notebooks-Archive-Read-Only/Laptop-won-t-turn-on-even-after-trying-to-hard-reset/td-p/6982651)
+[7] [https://www.hp.com](https://www.hp.com/us-en/shop/tech-takes/how-do-i-fix-laptop-that-wont-turn-on)
+[8] [https://www.hp.com](https://www.hp.com/id-en/shop/tech-takes/post/how-to-reset-bios-hp-laptop-safely)
+[9] [https://www.hp.com](https://www.hp.com/hk-en/shop/tech-takes/post/how-to-reset-bios-hp-laptop-safely)
