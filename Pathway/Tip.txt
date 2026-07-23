@@ -227,3 +227,49 @@ Se você quiser reinstalar o aplicativo no futuro ou precisar de ajuda com outro
 * O ícone do aplicativo sumiu por completo do seu menu do Ubuntu?
 
 
+Para limpar o cache no Ubuntu, você pode remover os arquivos temporários do sistema e dos aplicativos. O método mais seguro e eficiente é pelo terminal. [1] 
+## Cache do Sistema (Gerenciador de Pacotes APT)
+O Ubuntu guarda cópias de todos os programas que você baixa. Limpar esse cache libera muito espaço em disco. [2] 
+
+   1. Abra o terminal (Ctrl + Alt + T).
+   2. Apague os arquivos de instalação antigos que não servem mais:
+   
+   sudo apt autoclean
+   
+   3. Limpe todo o cache de downloads do APT:
+   
+   sudo apt clean
+   
+   [3, 4, 5] 
+
+## Cache de Miniaturas (Thumbnails)
+O sistema cria miniaturas de imagens e vídeos para mostrar no gerenciador de arquivos. Com o tempo, essa pasta acumula lixo de arquivos que você já deletou. [6] 
+
+   1. No terminal, cole o comando para apagar o cache de fotos e vídeos:
+   
+   rm -rf ~/.cache/thumbnails/*
+   
+   
+## Cache Geral do Usuário
+A maioria dos aplicativos (como o KDE Connect que você removeu) guarda dados temporários na sua pasta pessoal.
+
+   1. Para apagar arquivos temporários gerais do seu usuário:
+   
+   rm -rf ~/.cache/*
+   
+   (Nota: Os aplicativos vão recriar o que precisarem na próxima vez que forem abertos, o que pode deixá-los ligeiramente mais lentos no primeiro início).
+
+------------------------------
+Se o seu objetivo principal é liberar espaço ou resolver problemas de lentidão, me conte:
+
+* Você está tentando limpar o cache por falta de espaço no disco?
+* O problema é com o cache de algum navegador de internet específico (Chrome, Firefox)? [7] 
+
+
+[1] [https://diolinux.com.br](https://diolinux.com.br/aplicativos/ubuntu-cleaner-app-para-fazer-limpeza-de-cache.html)
+[2] [https://www.avast.com](https://www.avast.com/pt-br/c-how-to-clean-up-your-mac)
+[3] [https://hub.asimov.academy](https://hub.asimov.academy/blog/como-limpar-o-cache-dns/)
+[4] [https://www.vivaolinux.com.br](https://www.vivaolinux.com.br/dica/Mantenha-seu-Sistema-Leve-e-Rpido-com-a-Limpeza-do-APT/)
+[5] [https://plus.diolinux.com.br](https://plus.diolinux.com.br/t/como-limpar-caches-de-todos-os-apps-excluidos/11025/4)
+[6] [https://www.iobit.com](https://www.iobit.com/pt/base-de-conhecimento/limpar-pasta-windows-installer.php)
+[7] [https://www.magazine-hd.com](https://www.magazine-hd.com/apps/wp/google-chrome-firefox-forma-acabar-lentidao-browser-iphone/)
