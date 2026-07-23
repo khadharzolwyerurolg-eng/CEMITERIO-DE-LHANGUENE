@@ -161,3 +161,39 @@ Ecossistema Oficial: Todas as grandes empresas de IA (OpenAI, Anthropic, Google 
 Aplicações Fullstack: Com frameworks como Next.js e Nuxt.js, você constrói a interface visual da IA e o backend que se conecta aos modelos usando uma única linguagem.
 
 Ferramentas de Agentes (LangChain): O framework LangChain.js permite criar agentes de IA complexos e sistemas de memória diretamente em JS.
+
+Para desinstalar um aplicativo no Ubuntu, você pode usar a interface gráfica (Central de Aplicativos) ou o terminal. A forma mais rápida para iniciantes é usando a loja do sistema. [1, 2] 
+## Método 1: Pela Interface Gráfica (App Center / Central de Aplicativos)
+
+   1. Abra a Central de Aplicativos (Ubuntu Software) na sua barra lateral (Dock) ou pesquise por "Software" na barra de atividades.
+   2. Clique na aba "Instalado" (Installed) na parte superior.
+   3. Localize o aplicativo que deseja remover na lista ou use a barra de pesquisa.
+   4. Clique no botão "Remover" (Uninstall/Remove) ao lado do nome do app.
+   5. Digite a sua senha de usuário para confirmar e aguarde o processo terminar. [2, 3, 4, 5, 6] 
+
+· 1970 M01 1
+------------------------------
+## Método 2: Pelo Terminal
+Se você preferir usar a linha de comando, pressione as teclas Ctrl + Alt + T para abrir o terminal e siga os passos: [5] 
+
+   1. Digite o comando abaixo para remover o programa e suas configurações:
+   sudo apt purge nome-do-pacote
+   2. Para limpar os arquivos e dependências que não são mais necessários ao sistema, execute:
+   sudo apt autoremove [7] 
+
+Caso não saiba o nome exato do pacote do aplicativo, você pode listar todos os programas instalados ou buscá-los usando o gerenciador de pacotes apt. [8] 
+· 1970 M01 1
+Para podermos ser mais exatos, poderia me dizer:
+
+* Qual é o nome do aplicativo que você está tentando desinstalar?
+* Como você instalou esse aplicativo (pela loja, terminal ou usando um arquivo .deb)?
+
+
+[1] [https://www.youtube.com](https://www.youtube.com/watch?v=W6CwxGrNrPM&t=58)
+[2] [https://help.ubuntu.com](https://translate.google.com/translate?u=https://help.ubuntu.com/stable/ubuntu-help/addremove-remove&hl=pt&sl=en&tl=pt&client=sge)
+[3] [https://www.youtube.com](https://www.youtube.com/watch?v=xs61ZxABjcs&t=10)
+[4] [https://askubuntu.com](https://translate.google.com/translate?u=https://askubuntu.com/questions/1143/how-can-i-uninstall-software&hl=pt&sl=en&tl=pt&client=sge)
+[5] [https://www.youtube.com](https://www.youtube.com/watch?v=bRSeeMjoo48&t=54)
+[6] [https://pt.slideshare.net](https://pt.slideshare.net/slideshow/ubuntu-guia-do-iniciante-19668904/19668904)
+[7] [https://www.reddit.com](https://www.reddit.com/r/Ubuntu/comments/1km339w/how_to_uninstall_apps/?tl=pt-br)
+[8] [https://www.reddit.com](https://www.reddit.com/r/linux4noobs/comments/1hx5jmm/how_to_remove_an_application_from_ubuntu/?tl=pt-br)
